@@ -11,6 +11,7 @@ import { Country } from '../../interfaces/country';
 })
 export class CountryPageComponent implements OnInit {
   public country?: Country;
+  public isLoading: boolean = true;
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -25,6 +26,7 @@ export class CountryPageComponent implements OnInit {
       )
       .subscribe((country) => {
         console.log('country', country);
+        this.isLoading = false;
         if (!country || country.length === 0) {
           return this.router.navigateByUrl('countries');
         }

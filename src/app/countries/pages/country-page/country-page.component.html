@@ -1,4 +1,7 @@
 <ng-template #loading>
+  <div class="position-fixed top-50 start-50 translate-middle z-1">
+    <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+  </div>
   <div class="alert alert-info info-text-center">
     Espere por favor No se encontro el pais
   </div>
@@ -8,15 +11,15 @@
   <div class="row">
     <div class="col-12">
       <h2 class="text-muted">
-        Country: <strong>{{ country?.name?.common }}</strong>
+        Country: <strong>{{ country["name"].common }}</strong>
       </h2>
       <HR />
       <div class="row">
         <div class="col-4">
           <h3 class="text-muted">Flag</h3>
           <img
-            [src]="country?.flags?.svg"
-            [alt]="country?.name?.common"
+            [src]="country['flags'].svg"
+            [alt]="country['name'].common"
             class="img-thumbnail"
           />
         </div>
@@ -38,31 +41,31 @@
           <h3 class="text-muted">Traducciones</h3>
           <div class="d-flex flex-wrap">
             <span class="badge bg-primary m-1">{{
-              country.translations["ara"]?.common
+              country.translations["ara"].common
             }}</span>
             <span class="badge bg-primary m-1">{{
-              country.translations["eng"]?.common
+              country.translations["hrv"].common
             }}</span>
             <span class="badge bg-primary m-1">{{
-              country.translations["deu"]?.common
+              country.translations["deu"].common
             }}</span>
             <span class="badge bg-primary m-1">{{
-              country.translations["bre"]?.common
+              country.translations["bre"].common
             }}</span>
             <span class="badge bg-primary m-1">{{
-              country.translations["ces"]?.common
+              country.translations["ces"].common
             }}</span>
             <span class="badge bg-primary m-1">{{
-              country.translations["cym"]?.common
+              country.translations["cym"].common
             }}</span>
             <span class="badge bg-primary m-1">{{
-              country.translations["fin"]?.common
+              country.translations["fin"].common
             }}</span>
             <span class="badge bg-primary m-1">{{
-              country.translations["kor"]?.common
+              country.translations["kor"].common
             }}</span>
             <span class="badge bg-primary m-1">{{
-              country.translations["fin"]?.common
+              country.translations["hun"].common
             }}</span>
           </div>
         </div>
