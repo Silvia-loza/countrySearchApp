@@ -2,6 +2,6 @@
   type="text"
   #txtSearchInput
   [placeholder]="placeholder"
-  (keyup.enter)="searchByCapital(txtSearchInput.value)"
+  (keyup)="onKeyPress(txtSearchInput.value)"
   class="form-control"
 />
