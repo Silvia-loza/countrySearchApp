@@ -8,6 +8,7 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { CountriesRoutingModule } from '../countries/countries-routing.module';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { CountriesModule } from '../countries/countries.module';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CountriesModule } from '../countries/countries.module';
     SidebarComponent,
     ContactPageComponent,
     SearchBoxComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [CommonModule, CountriesRoutingModule],
   exports: [
@@ -24,6 +26,7 @@ import { CountriesModule } from '../countries/countries.module';
     SidebarComponent,
     ContactPageComponent,
     SearchBoxComponent,
+    LoadingSpinnerComponent,
   ],
 })
 export class SharedModule {}

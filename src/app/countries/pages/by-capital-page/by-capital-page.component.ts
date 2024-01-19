@@ -10,13 +10,15 @@ import { Country, CapitalInfo } from '../../interfaces/country';
 export class ByCapitalPageComponent {
   public placeHolder: string = 'Buscar Capital...';
   public countryList: Country[] = [];
+  public isLoading: boolean = false;
+
   constructor(private countriesService: CountriesService) {}
 
   SearchByCapital(searchWord: string): void {
-    console.log('Desde ByCapitalPageComponent');
-    console.log({ searchWord });
+    this.isLoading = true;
     this.countriesService.searchByCapital(searchWord).subscribe((countries) => {
       this.countryList = countries;
+      this.isLoading = false;
     });
   }
 }

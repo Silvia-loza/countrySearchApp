@@ -11,13 +11,14 @@ export class ByRegionPageComponent {
   constructor(private countriesService: CountriesService) {}
   public placeHolder: string = 'Buscar Región...';
   public countryList: Country[] = [];
+  public isLoading: boolean = false;
 
   SearchByRegion(searchWord: string): void {
-    console.log('Desde ByCountryPageComponent');
-    console.log({ searchWord });
+    this.isLoading = true;
+
     this.countriesService.searchByRegion(searchWord).subscribe((countries) => {
       this.countryList = countries;
-      console.log({ countries });
+      this.isLoading = false;
     });
   }
 }

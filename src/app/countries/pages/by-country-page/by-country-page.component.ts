@@ -9,15 +9,17 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class ByCountryPageComponent {
   public placeHolder: string = 'Buscar Pais...';
+  public isLoading: boolean = false;
 
   public countryList: Country[] = [];
 
   constructor(private countriesService: CountriesService) {}
   SearchByCountry(searchWord: string): void {
-    console.log('Desde ByCountryPageComponent');
-    console.log({ searchWord });
+    this.isLoading = true;
+
     this.countriesService.searchByCountry(searchWord).subscribe((countries) => {
       this.countryList = countries;
+      this.isLoading = false;
       console.log({ countries });
     });
   }
