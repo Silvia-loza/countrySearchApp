@@ -1,4 +1,7 @@
 <ng-template #loading>
+  <div class="position-fixed top-50 start-50 translate-middle z-1">
+    <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+  </div>
   <div class="alert alert-info info-text-center">
     Espere por favor No se encontro el pais
   </div>
